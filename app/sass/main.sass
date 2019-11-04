@@ -42,19 +42,17 @@ img
 .main-header
 	position: relative
 	background-repeat: no-repeat
-	background-size: 100% 100%
+	background-size: cover
 	background-position: top center
 	background-color: $secondary
-	height: 100vw // or auto?
-	min-height: 100vh
-	margin-left: 40px
-	margin-top: 40px
+	height: auto //or 100vw?
+	min-height: 100vw
 	padding-right: 45px
 	&::before
 		position: absolute
 		content: ""
 		display: block
-		left: 33px
+		left: 66px
 		height: 100%
 		border-left: 1px solid #71777c
 
@@ -81,8 +79,6 @@ img
 	align-items: center
 	border-bottom: 1px solid #71777c
 .main-nav__logo
-	position: relative
-	left: -33px
 	width: 66px
 	height: 66px
 	line-height: 0
@@ -90,6 +86,7 @@ img
 .menu
 	display: flex
 	font-weight: 300
+	margin-left: 40px
 .menu__item
 	margin-right: 30px
 	font-size: 14px
@@ -100,11 +97,12 @@ img
 		color: $secondary
 
 .intro
-	padding-left: 20%
+	position: absolute
+	left: 15%
+	top: 40%
 	max-width: 60%
 	font-size: 15px
 	font-weight: 400
-	margin-top: 20%
 .intro__label
 	position: relative
 	font-family: "Merriweather"
@@ -125,7 +123,7 @@ img
 	line-height: 1.2
 .intro__text
 	width: 70%
-
+	margin: 1em 0 0 0
 .photos
 	background-color: $secondary
 	padding-top: 40px
