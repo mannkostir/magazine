@@ -12,4 +12,31 @@ html(lang="en")
 		link(rel="apple-touch-icon", href="img/apple_touch/apple-touch-icon.png")
 		link(rel="stylesheet", href="css/main.css")
 	body
+		header.main-header(style="background-image: url(img/header_bg.png)")
+			nav.top-nav
+				i.fas.fa-search.top-nav__search
+				i.fas.fa-bars.top-nav__hamburger
+				a(href="#").top-nav__logo
+					img(src="img/logo.png")
+			nav.main-nav
+				a(href="/").main-nav__logo
+					img(src="img/logo.png")
+				ul.menu
+					li.menu__item
+						a(href="#").menu__link Reviews
+					li.menu__item
+						a(href="#").menu__link Photos
+					li.menu__item
+						a(href="#").menu__link Videos
+					li.menu__item
+						a(href="#").menu__link Articles
+			section.intro
+				span.intro__label f_ck
+				div.intro__content
+					p.intro__date.
+						01 August 2015
+					h1.intro__heading.
+						Are you are in the market for a computer?
+					p.intro__text.
+						According to the research firm Frost & Sullivan, the estimated size of the North American used test and measurement
 		script(src="js/common.js")

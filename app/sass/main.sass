@@ -7,12 +7,110 @@
 
 body
 	position: relative
-	font-size: 16px
+	font-size: 13px
 	min-width: 320px
 	font-family: $default-font
+	color: #fff
 	line-height: 1.75
+	margin: 0
+h1
+	font-family: 'Roboto Condensed'
+	font-size: 45px
+	font-weight: 300
+	line-height: 1.25
+	text-transform: uppercase
+ul
+	list-style: none
+a
+	text-decoration: none
+	color: $primary
 .wrapper
 	max-width: $wrapper-width
 	margin: 0 auto
+
+.main-header
+	position: relative
+	background-repeat: no-repeat
+	background-size: 100% 100%
+	background-position: top center
+	background-color: $secondary
+	height: 100vw // or auto?
+	min-height: 100vh
+	margin-left: 40px
+	margin-top: 40px
+	padding-right: 45px
+	&::before
+		position: absolute
+		content: ""
+		display: block
+		left: 33px
+		height: 100%
+		border-left: 1px solid #71777c
+
+.top-nav
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	margin-bottom: 10%
+	padding-top: 40px
+.top-nav__logo img
+	height: 48px
+	width: 48px
+	border-radius: 50%
+.top-nav__search,
+.top-nav__hamburger
+	font-size: 17px
+	margin-right: 30px
+	cursor: pointer
+	&:hover
+		color: $secondary
+
+.main-nav
+	display: flex
+	align-items: center
+	border-bottom: 1px solid #71777c
+.main-nav__logo
+	position: relative
+	left: -33px
+	width: 66px
+	height: 66px
+	line-height: 0
+	z-index: 1
+.menu
+	display: flex
+.menu__item
+	margin-right: 30px
+	font-size: 14px
+	text-transform: uppercase
+	&:last-child
+		margin-right: 0
+	&:hover a
+		color: $secondary
+
+.intro
+	padding-left: 20%
+	max-width: 60%
+	font-size: 15px
+	font-weight: 400
+	margin-top: 20%
+.intro__label
+	position: relative
+	font-size: 300px
+	font-weight: 400
+	line-height: 1
+.intro__content
+	position: relative
+	left: 420px
+.intro__date
+	text-transform: uppercase
+	font-size: 14px
+	font-weight: 500
+.intro__heading
+	font-size: 45px
+	font-weight: 300
+	margin: 0
+	line-height: 1.2
+.intro__text
+	width: 70%
 
 @import "media"
