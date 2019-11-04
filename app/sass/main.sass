@@ -20,11 +20,21 @@ h1
 	font-weight: 300
 	line-height: 1.25
 	text-transform: uppercase
+h3
+	font-family: "Merriweather"
+	font-size: 35px
+	font-weight: 400
 ul
 	list-style: none
 a
 	text-decoration: none
 	color: $primary
+ul
+	margin: 0
+	padding: 0
+img
+	width: 100%
+	height: auto
 .wrapper
 	max-width: $wrapper-width
 	margin: 0 auto
@@ -115,5 +125,24 @@ a
 	line-height: 1.2
 .intro__text
 	width: 70%
+
+.photos
+	background-color: $secondary
+	padding-top: 40px
+.photos__heading
+	margin-top: 0
+	margin-bottom: 20px
+.photos__list
+	display: flex
+	flex-flow: row wrap
+.photos__item
+	margin-right: 15px
+	margin-bottom: 30px
+	width: 30% // 19%
+	font-size: 15px
+	&:last-child
+		margin-right: 0
+.photos__description
+	margin: 0
 
 @import "media"
