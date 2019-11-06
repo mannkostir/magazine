@@ -226,6 +226,56 @@ img
 	background-repeat: no-repeat
 	background-size: cover
 	background-color: #11161d
+.main-footer
+	background-color: #11161d
+	padding: 10% 0
+	> .wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+		// > *
+			// width: calc((100% -20px * 2) / 3)
+.copyright
+	width: 30%
+.social
+	margin-left: auto
+	margin-right: 25px
+.social__item
+	width: 40px
+	height: 40px
+	background-color: $secondary
+	border-radius: 50%
+	display: inline-flex
+	margin-right: 10px
+	transition: .3s ease-in-out
+	i
+		font-size: 18px
+		margin: auto
+	&:last-child
+		margin-right: 0
+	&:hover
+		box-shadow: 0 0 12px $secondary
 
+.subscribe-form
+	position: relative
+.subscribe-form__label
+	position: absolute
+	top: -35px
+	margin-bottom: 15px
+.subscribe-form__input
+	height: 50px
+	width: 100%
+	min-width: 300px
+	padding-left: 20px
+.subscribe-form__button
+	position: absolute
+	height: 50px
+	right: 10px
+	background: transparent
+	border: none
+	cursor: pointer
+	> i
+		font-size: 20px
+		color: $secondary
 
 @import "media"
