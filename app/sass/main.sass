@@ -139,9 +139,10 @@ img
 .photos__item
 	margin-right: 15px
 	margin-bottom: 30px
-	width: 30% // 19%
+	width: calc((100% - 23px * 2) / 4)
+	// width: 25%
 	font-size: 15px
-	&:last-child
+	&:nth-child(4n + 4)
 		margin-right: 0
 .photos__description
 	margin: 0
@@ -190,14 +191,16 @@ img
 .articles
 	background-color: #f2f2f2
 	color: #000
+	padding: 5% 0 8% 0
 .articles__list
 	display: flex
 	flex-flow: row wrap
 .articles__item
 	background-color: #fff
-	width: 23%
+	width: calc((100% - 15px * 3) / 4)
 	margin-right: 15px
-	&:last-child
+	margin-bottom: 50px
+	&:nth-child(4n + 4)
 		margin-right: 0
 .articles__item-title
 	line-height: 1.2
