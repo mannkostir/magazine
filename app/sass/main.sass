@@ -14,6 +14,16 @@ body
 	color: #fff
 	line-height: 1.75
 	margin: 0
+	&::before
+		position: absolute
+		content: ""
+		display: block
+		left: 5%
+		height: 100%
+		width: 1px
+		background-color: #fff
+		z-index: 1
+		opacity: 0.2
 h1
 	font-family: 'Roboto Condensed'
 	font-size: 45px
@@ -35,6 +45,9 @@ a
 ul
 	margin: 0
 	padding: 0
+button
+	border: none
+	outline: none
 img
 	width: 100%
 	height: auto
@@ -48,16 +61,9 @@ img
 	background-size: cover
 	background-position: top center
 	background-color: $secondary
-	height: auto //or 100vw?
+	height: auto
 	min-height: 100vw
 	padding-right: 45px
-	&::before
-		position: absolute
-		content: ""
-		display: block
-		left: 66px
-		height: 100%
-		border-left: 1px solid #71777c
 
 .top-nav
 	display: flex
@@ -69,6 +75,9 @@ img
 	height: 48px
 	width: 48px
 	border-radius: 50%
+	transition: .5s ease
+	&:hover
+		border-radius: 0
 .top-nav__search,
 .top-nav__hamburger
 	font-size: 17px
@@ -80,12 +89,23 @@ img
 .main-nav
 	display: flex
 	align-items: center
-	border-bottom: 1px solid #71777c
+	position: relative
+	&::after
+		position: absolute
+		content: ""
+		bottom: 0
+		display: inline-block
+		width: 100%
+		height: 1px
+		background-color: #fff
+		opacity: 0.2
 .main-nav__logo
-	width: 66px
-	height: 66px
+	width: 5vw
+	height: auto
 	line-height: 0
-	z-index: 1
+	img
+		width: 100%
+		height: 100%
 .menu
 	display: flex
 	font-weight: 300
@@ -94,10 +114,25 @@ img
 	margin-right: 30px
 	font-size: 14px
 	text-transform: uppercase
+	cursor: pointer
+	position: relative
+	padding-bottom: 5px
 	&:last-child
 		margin-right: 0
 	&:hover a
 		color: $secondary
+	&::after
+		position: absolute
+		left: 0
+		bottom: 0
+		content: ""
+		height: 5px
+		width: 0%
+		background-color: $secondary
+		display: inline-block
+		transition: width .7s ease
+	&:hover::after
+		width: 100%
 
 .jumbotron
 	position: absolute
@@ -127,9 +162,12 @@ img
 .jumbotron__text
 	width: 70%
 	margin: 1em 0 0 0
+
 .photos
 	background-color: $secondary
-	padding-top: 40px
+	padding-top: 5%
+	padding-bottom: 17%
+	position: relative
 .photos__title
 	margin-top: 0
 	margin-bottom: 20px
@@ -140,10 +178,36 @@ img
 	margin-right: 15px
 	margin-bottom: 30px
 	width: calc((100% - 23px * 2) / 4)
-	// width: 25%
 	font-size: 15px
+	z-index: 2
 	&:nth-child(4n + 4)
 		margin-right: 0
+.photos__image
+	position: relative
+	&.scaled
+		width: calc((100% - 23px * 2) / 4)
+		position: fixed
+		top: 20%
+		left: 0
+		bottom: 0
+		right: 0
+		margin: auto
+.photos__scale
+	position: absolute
+	right: 5px
+	bottom: 12px
+	width: 32px
+	height: 32px
+	background-color: $secondary
+	display: flex
+	cursor: pointer
+	color: #fff
+	> i
+		margin: auto
+		font-size: 13px
+		transition: .3s ease-in-out
+	&.hovered > i
+		font-size: 20px
 .photos__description
 	margin: 0
 
@@ -151,12 +215,26 @@ img
 	padding: 10% 0 20% 0
 	background-repeat: no-repeat
 	background-size: 100% 100%
+	background-color: #f2f2f2
 	font-family: 'Merriweather'
 	position: relative
+	z-index: 1
 	> .wrapper
 		display: flex
 		flex-direction: row
 		justify-content: space-between
+	&::before
+		background: #11161d
+		top: -20%
+		content: ""
+		display: block
+		height: 20% + 1%
+		left: 0
+		position: absolute
+		right: 0
+		transform: skewY(-3deg)
+		transform-origin: 100%
+		z-index: 2
 .blog__header
 	width: 30%
 .blog__path
@@ -164,6 +242,9 @@ img
 	font-size: 14px
 .blog__path-root
 	color: $secondary
+	padding-right: 5px
+	&:hover
+		text-decoration: underline
 .blog__title
 	margin: 10px 0
 .blog__description
@@ -189,9 +270,11 @@ img
 		background-color: $secondary
 
 .articles
+	position: relative
 	background-color: #f2f2f2
 	color: #000
 	padding: 5% 0 8% 0
+	z-index: 1
 .articles__list
 	display: flex
 	flex-flow: row wrap
@@ -222,6 +305,8 @@ img
 	display: flex
 	> i
 		margin: auto
+	&:active
+		box-shadow: inset 0 0 10px rgba(30%, 5%, 8%, .8)
 .jumbotron-container
 	position: relative
 	min-height: 100vw
@@ -229,15 +314,17 @@ img
 	background-repeat: no-repeat
 	background-size: cover
 	background-color: #11161d
+.jumbotron-container_bottom
+	z-index: 1
 .main-footer
+	position: relative
 	background-color: #11161d
 	padding: 10% 0
+	z-index: 1
 	> .wrapper
 		display: flex
 		align-items: center
 		justify-content: space-between
-		// > *
-			// width: calc((100% -20px * 2) / 3)
 .copyright
 	width: 30%
 .social
@@ -277,6 +364,7 @@ img
 	background: transparent
 	border: none
 	cursor: pointer
+	outline: none
 	> i
 		font-size: 20px
 		color: $secondary

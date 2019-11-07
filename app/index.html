@@ -46,36 +46,47 @@ html(lang="en")
 						Is It Frosting Or Is It Icing
 					ul.photos__list
 						li.photos__item
-							a.photos__image
+							div.photos__image
 								img(src="img/photos-photo_1.jpg")
+								button.photos__scale
+									i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
-							a.photos__image
+							div.photos__image
 								img(src="img/photos-photo_2.jpg")
+								button.photos__scale
+									i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
-							a.photos__image
+							div.photos__image
 								img(src="img/photos-photo_3.jpg")
+								button.photos__scale
+									i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
-							a.photos__image
+							div.photos__image
 								img(src="img/photos-photo_4.jpg")
+								button.photos__scale
+									i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
-							a.photos__image
+							div.photos__image
 								img(src="img/photos-photo_5.jpg")
+								button.photos__scale
+									i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 			section.blog(style="background-image: url(img/blog_bg.png)")
 				div.wrapper
 					header.blog__header
 						div.blog__path
-							span.blog__path-root Blog 
-							| / Lorem ipsum dolor
+							span
+								a.blog__path-root(href="#") Blog
+							|/ Lorem ipsum dolor
 						h3.blog__title.
 							Booking A Holiday Tour Or Vacation In Egypt
 						p.blog__description.
@@ -151,7 +162,7 @@ html(lang="en")
 									| Garrett Park
 								a.articles__more-link(href="#")
 									i.fas.fa-chevron-right
-			div.jumbotron-container(style="background-image: url(img/footer_bg.png)")
+			div.jumbotron-container.jumbotron-container_bottom(style="background-image: url(img/footer_bg.png)")
 				section.jumbotron
 					span.jumbotron__label b_lls
 					div.jumbotron__content
