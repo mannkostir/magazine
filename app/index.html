@@ -47,37 +47,42 @@ html(lang="en")
 					ul.photos__list
 						li.photos__item
 							div.photos__image
-								img(src="img/photos-photo_1.jpg")
-								button.photos__scale
-									i.fas.fa-plus
+								a(data-fslightbox, data-type="image" href="img/photos-photo_1_lg.jpg")
+									img(src="img/photos-photo_1.jpg")
+									button.photos__scale
+										i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
 							div.photos__image
-								img(src="img/photos-photo_2.jpg")
-								button.photos__scale
-									i.fas.fa-plus
+								a(data-fslightbox, data-type="image" href="img/photos-photo_2_lg.jpg")
+									img(src="img/photos-photo_2.jpg")
+									button.photos__scale
+										i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
 							div.photos__image
-								img(src="img/photos-photo_3.jpg")
-								button.photos__scale
-									i.fas.fa-plus
+								a(data-fslightbox, data-type="image" href="img/photos-photo_3_lg.jpg")
+									img(src="img/photos-photo_3.jpg")
+									button.photos__scale
+										i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
 							div.photos__image
-								img(src="img/photos-photo_4.jpg")
-								button.photos__scale
-									i.fas.fa-plus
+								a(data-fslightbox, data-type="image" href="img/photos-photo_4_lg.jpg")
+									img(src="img/photos-photo_4.jpg")
+									button.photos__scale
+										i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 						li.photos__item
 							div.photos__image
-								img(src="img/photos-photo_5.jpg")
-								button.photos__scale
-									i.fas.fa-plus
+								a(data-fslightbox, data-type="image" href="img/photos-photo_5_lg.jpg")
+									img(src="img/photos-photo_5.jpg")
+									button.photos__scale
+										i.fas.fa-plus
 							p.photos__description.
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 			section.blog(style="background-image: url(img/blog_bg.png)")
@@ -105,63 +110,70 @@ html(lang="en")
 				span.blog__decor-text Lorem ipsum dolor sit amet
 			section.articles
 				div.wrapper
-					ul.articles__list
-						li.articles__item
-							div.articles__item-content
-								div.articles__photo
-									img(src="img/articles-photo_1.jpg")
-								h5.articles__item-title.
-									The Basics Of Buying A Telescope
-								p.articles__description.
-									Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. 
-							div.articles__item-links
-								a.articles__author(href="#")
-									i.fas.fa-tag
-									| Caroline Fleming
-								a.articles__more-link(href="#")
-									i.fas.fa-chevron-right
-						li.articles__item
-							div.articles__item-content
-								div.articles__photo
-									img(src="img/articles-photo_2.jpg")
-								h5.articles__item-title.
-									Stu Under Rise And Fall Of A Poker Genius
-								p.articles__description.
-									LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more
-							div.articles__item-links
-								a.articles__author(href="#")
-									i.fas.fa-tag
-									| Andrew Lamb
-								a.articles__more-link(href="#")
-									i.fas.fa-chevron-right
-						li.articles__item
-							div.articles__item-content
-								div.articles__photo
-									img(src="img/articles-photo_3.jpg")
-								h5.articles__item-title.
-									A Starter Guide To Self Improvement
-								p.articles__description.
-									It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office’s files, machines and decorations.
-							div.articles__item-links
-								a.articles__author(href="#")
-									i.fas.fa-tag
-									| Bess Pratt
-								a.articles__more-link(href="#")
-									i.fas.fa-chevron-right
-						li.articles__item
-							div.articles__item-content
-								div.articles__photo
-									img(src="img/articles-photo_4.jpg")
-								h5.articles__item-title.
-									The Power Of Notes
-								p.articles__description.
-									EPROM or Erasable Programmable Read Only Memory is rewritable memory chip that can hold its data without power. A programmed EPROM can keep its data for up to twenty years
-							div.articles__item-links
-								a.articles__author(href="#")
-									i.fas.fa-tag
-									| Garrett Park
-								a.articles__more-link(href="#")
-									i.fas.fa-chevron-right
+					div.glide
+						div.glide__track(data-glide-el="track")
+							ul.articles__list.glide__slides
+								li.articles__item.glide__slide
+									div.articles__item-content
+										div.articles__photo
+											img(src="img/articles-photo_1.jpg")
+										h5.articles__item-title.
+											The Basics Of Buying A Telescope
+										p.articles__description.
+											Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. 
+									div.articles__item-links
+										a.articles__author(href="#")
+											i.fas.fa-tag
+											| Caroline Fleming
+										a.articles__more-link(href="#")
+											i.fas.fa-chevron-right
+								li.articles__item.glide__slide
+									div.articles__item-content
+										div.articles__photo
+											img(src="img/articles-photo_2.jpg")
+										h5.articles__item-title.
+											Stu Under Rise And Fall Of A Poker Genius
+										p.articles__description.
+											LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more
+									div.articles__item-links
+										a.articles__author(href="#")
+											i.fas.fa-tag
+											| Andrew Lamb
+										a.articles__more-link(href="#")
+											i.fas.fa-chevron-right
+								li.articles__item.glide__slide
+									div.articles__item-content
+										div.articles__photo
+											img(src="img/articles-photo_3.jpg")
+										h5.articles__item-title.
+											A Starter Guide To Self Improvement
+										p.articles__description.
+											It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office’s files, machines and decorations.
+									div.articles__item-links
+										a.articles__author(href="#")
+											i.fas.fa-tag
+											| Bess Pratt
+										a.articles__more-link(href="#")
+											i.fas.fa-chevron-right
+								li.articles__item.glide__slide
+									div.articles__item-content
+										div.articles__photo
+											img(src="img/articles-photo_4.jpg")
+										h5.articles__item-title.
+											The Power Of Notes
+										p.articles__description.
+											EPROM or Erasable Programmable Read Only Memory is rewritable memory chip that can hold its data without power. A programmed EPROM can keep its data for up to twenty years
+									div.articles__item-links
+										a.articles__author(href="#")
+											i.fas.fa-tag
+											| Garrett Park
+										a.articles__more-link(href="#")
+											i.fas.fa-chevron-right
+						div.glide__arrows(data-glide-el="controls")
+							button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+								i.fas.fa-arrow-left
+							button.glide__arrow.glide__arrow--right(data-glide-dir=">")
+								i.fas.fa-arrow-right
 			div.jumbotron-container.jumbotron-container_bottom(style="background-image: url(img/footer_bg.png)")
 				section.jumbotron
 					span.jumbotron__label b_lls

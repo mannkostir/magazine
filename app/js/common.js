@@ -1,15 +1,31 @@
+'use strict';
+
+import 'fslightbox'
+import Glide from '@glidejs/glide'
+
+gliderCarousel();
+
 animateScaleButton();
+
+function gliderCarousel() {
+	new Glide('.glide', {
+		perView: 4,
+		type: 'carousel'
+	}).mount();
+}
+
 
 function animateScaleButton() {
 	let scaleButton = document.querySelectorAll('.photos__scale');
+	let photosImage = document.querySelectorAll('.photos__image');
 
-	scaleButton.forEach( (el) => {
+	photosImage.forEach( (el, i) => {
 		el.onmouseenter = () => {
-			el.classList.add('hovered');
+			scaleButton[i].classList.add('hovered');
 		};
 
 		el.addEventListener('transitionend', () => {
-			el.classList.remove('hovered');
+			scaleButton[i].classList.remove('hovered');
 		});
 	});
 };
