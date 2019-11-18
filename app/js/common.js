@@ -3,17 +3,29 @@
 import 'fslightbox'
 import Glide from '@glidejs/glide'
 
-gliderCarousel();
+glideCarousel();
 
 animateScaleButton();
 
-function gliderCarousel() {
+openNavMenu();
+
+function glideCarousel() {
 	new Glide('.glide', {
+		type: 'carousel',
 		perView: 4,
-		type: 'carousel'
+		breakpoints: {
+			1366: {
+				perView: 3
+			},
+			1080: {
+				perView: 2
+			},
+			860: {
+				perView: 1
+			}
+		}
 	}).mount();
 }
-
 
 function animateScaleButton() {
 	let scaleButton = document.querySelectorAll('.photos__scale');
@@ -29,3 +41,13 @@ function animateScaleButton() {
 		});
 	});
 };
+
+function openNavMenu() {
+	const menuToggle = document.getElementById('menuToggle');
+	const menu = document.querySelector('.main-nav .menu');
+
+	menuToggle.onclick = () => {
+		menu.classList.toggle('opened');
+		menuToggle.classList.toggle('active');
+	}
+}

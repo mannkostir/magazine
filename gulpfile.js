@@ -7,7 +7,9 @@ const gulp = require('gulp'),
 	  del = require('del'),
 	  babelify = require('babelify'),
 	  imagemin = require('gulp-imagemin'),
-	  pngquant = require('imagemin-pngquant'),
+	  imageminGiflossy = require('imagemin-giflossy'),
+	  imageminMozjpeg = require('imagemin-mozjpeg'),
+	  imageminPngquant = require('imagemin-pngquant'),
 	  autoprefixer = require('gulp-autoprefixer'),
 	  source = require('vinyl-source-stream'),
 	  buffer = require('vinyl-buffer'),
@@ -94,12 +96,25 @@ gulp.task('scripts', () => {
 
 gulp.task('img', () => {
 	return gulp.src(path.src.img)
-		.pipe(imagemin({
-			interplace: true,
-			progressive: true,
-			svgoPlugins: [{removeViewBox: false}],
-			use: [pngquant()]
-		}))
+		.pipe(imagemin([
+			imageminGiflossy({
+				interplaced: true,
+				optimizationLevel: 3,
+				lossy: 2
+			}),
+			imageminMozjpeg({
+				quality: 90
+			}),
+			imageminPngquant({
+				speed: 1,
+				quality: [0.95, 1]
+			}),
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: true}
+				]
+			})
+		]))
 		.pipe(gulp.dest(path.dist.img))
 		.pipe(browserSync.reload({stream: true}));
 });

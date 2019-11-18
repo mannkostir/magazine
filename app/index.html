@@ -2,11 +2,11 @@ doctype html
 html(lang="en")
 	head
 		meta(charset="UTF-8")
-		title Title
+		title Magazine
 		meta(name="description", content="")
 		meta(http-equiv="X-UA-Complatible", content="IE=edge")
 		meta(name="viewport" content="width=device-width", initial-scale="1", maximum-scale="1")
-		meta(name="theme-color", content="")
+		meta(name="theme-color", content="#cc171e")
 		link(rel="icon", type="image/png", href="img/favicon/favicon-16x16.png", sized="16x16")
 		link(rel="icon", type="image/png", href="img/favicon/favicon-32x32.png", sized="32x32")
 		link(rel="apple-touch-icon", href="img/apple_touch/apple-touch-icon.png")
@@ -14,6 +14,8 @@ html(lang="en")
 	body
 		header.main-header(style="background-image: url(img/header_bg.png)")
 			nav.top-nav
+				button.menu-toggle#menuToggle
+					i.fas.fa-compass.menu-toggle__icon
 				i.fas.fa-search.top-nav__search
 				i.fas.fa-bars.top-nav__hamburger
 				a(href="#").top-nav__logo
@@ -115,61 +117,65 @@ html(lang="en")
 							ul.articles__list.glide__slides
 								li.articles__item.glide__slide
 									div.articles__item-content
-										div.articles__photo
+										div.articles__item-image
 											img(src="img/articles-photo_1.jpg")
-										h5.articles__item-title.
-											The Basics Of Buying A Telescope
-										p.articles__description.
-											Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. 
-									div.articles__item-links
-										a.articles__author(href="#")
-											i.fas.fa-tag
-											| Caroline Fleming
-										a.articles__more-link(href="#")
-											i.fas.fa-chevron-right
+										div.articles__item-text
+											h5.articles__item-title.
+												The Basics Of Buying A Telescope
+											p.articles__description.
+												Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. 
+										div.articles__item-links
+											a.articles__author(href="#")
+												i.fas.fa-tag
+												| Caroline Fleming
+											a.articles__more-link(href="#")
+												i.fas.fa-chevron-right
 								li.articles__item.glide__slide
 									div.articles__item-content
 										div.articles__photo
 											img(src="img/articles-photo_2.jpg")
-										h5.articles__item-title.
-											Stu Under Rise And Fall Of A Poker Genius
-										p.articles__description.
-											LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more
-									div.articles__item-links
-										a.articles__author(href="#")
-											i.fas.fa-tag
-											| Andrew Lamb
-										a.articles__more-link(href="#")
-											i.fas.fa-chevron-right
+										div.articles__item-text
+											h5.articles__item-title.
+												Stu Under Rise And Fall Of A Poker Genius
+											p.articles__description.
+												LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more
+										div.articles__item-links
+											a.articles__author(href="#")
+												i.fas.fa-tag
+												| Andrew Lamb
+											a.articles__more-link(href="#")
+												i.fas.fa-chevron-right
 								li.articles__item.glide__slide
 									div.articles__item-content
 										div.articles__photo
 											img(src="img/articles-photo_3.jpg")
-										h5.articles__item-title.
-											A Starter Guide To Self Improvement
-										p.articles__description.
-											It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office’s files, machines and decorations.
-									div.articles__item-links
-										a.articles__author(href="#")
-											i.fas.fa-tag
-											| Bess Pratt
-										a.articles__more-link(href="#")
-											i.fas.fa-chevron-right
+										div.articles__item-text
+											h5.articles__item-title.
+												A Starter Guide To Self Improvement
+											p.articles__description.
+												It is a good idea to think of your PC as an office. It stores files, programs, pictures. This can be compared to an actual office’s files, machines and decorations.
+										div.articles__item-links
+											a.articles__author(href="#")
+												i.fas.fa-tag
+												| Bess Pratt
+											a.articles__more-link(href="#")
+												i.fas.fa-chevron-right
 								li.articles__item.glide__slide
 									div.articles__item-content
 										div.articles__photo
 											img(src="img/articles-photo_4.jpg")
-										h5.articles__item-title.
-											The Power Of Notes
-										p.articles__description.
-											EPROM or Erasable Programmable Read Only Memory is rewritable memory chip that can hold its data without power. A programmed EPROM can keep its data for up to twenty years
-									div.articles__item-links
-										a.articles__author(href="#")
-											i.fas.fa-tag
-											| Garrett Park
-										a.articles__more-link(href="#")
-											i.fas.fa-chevron-right
-						div.glide__arrows(data-glide-el="controls")
+										div.articles__item-text
+											h5.articles__item-title.
+												The Power Of Notes
+											p.articles__description.
+												EPROM or Erasable Programmable Read Only Memory is rewritable memory chip that can hold its data without power. A programmed EPROM can keep its data for up to twenty years
+										div.articles__item-links
+											a.articles__author(href="#")
+												i.fas.fa-tag
+												| Garrett Park
+											a.articles__more-link(href="#")
+												i.fas.fa-chevron-right
+						div.glide__arrows(data-glide-el="controls[nav]")
 							button.glide__arrow.glide__arrow--left(data-glide-dir="<")
 								i.fas.fa-arrow-left
 							button.glide__arrow.glide__arrow--right(data-glide-dir=">")

@@ -5,9 +5,11 @@
 *, *::before, *::after
 	box-sizing: border-box
 
+html
+	font-size: 14px
+
 body
 	position: relative
-	font-size: 13px
 	min-width: 320px
 	font-family: $default-font
 	font-weight: 400
@@ -32,11 +34,13 @@ h1
 	text-transform: uppercase
 h3
 	font-family: "Merriweather"
+	font-weight: 700
 	font-size: 35px
 	line-height: 1.3
 h5
 	font-family: "Merriweather"
 	font-size: 23px
+	font-weight: 700
 ul
 	list-style: none
 a
@@ -52,8 +56,9 @@ img
 	width: 100%
 	height: auto
 .wrapper
-	max-width: $wrapper-width
+	max-width: 160rem
 	margin: 0 auto
+	padding: 0 13rem
 
 .main-header
 	position: relative
@@ -64,6 +69,7 @@ img
 	height: auto
 	min-height: 100vw
 	padding-right: 45px
+	margin-bottom: -2px
 
 .top-nav
 	display: flex
@@ -101,6 +107,7 @@ img
 		opacity: 0.2
 .main-nav__logo
 	width: 5vw
+	min-width: 50px
 	height: auto
 	line-height: 0
 	img
@@ -133,40 +140,55 @@ img
 		transition: width .7s ease
 	&:hover::after
 		width: 100%
+.menu-toggle
+	background-color: transparent
+	cursor: pointer
+	font-size: 24px
+	display: none
+	margin-right: 20px
+	&.active
+		.menu-toggle__icon
+			color: $secondary
+.menu-toggle__icon
+	color: #fff
 
 .jumbotron
 	position: absolute
 	left: 15%
 	top: 40%
-	max-width: 60%
-	font-size: 15px
+	max-width: 70%
+	width: 50%
+	font-size: 1.5vw
 	font-weight: 400
 .jumbotron__label
 	position: relative
 	font-family: "Merriweather"
-	font-size: 300px
+	font-size: 20vw
 	font-weight: 400
 	line-height: 1
 .jumbotron__content
-	position: relative
-	left: 420px
+	position: absolute
+	width: 100%
+	top: 93%
+	left: 60%
 .jumbotron__date
 	text-transform: uppercase
-	font-size: 14px
+	font-size: 0.75em
 	font-weight: 500
 .jumbotron__title
-	font-size: 45px
+	font-size: 2.2em
 	font-weight: 300
 	margin: 0
 	line-height: 1.2
 .jumbotron__text
+	font-size: 1em
 	width: 70%
 	margin: 1em 0 0 0
 
 .photos
 	background-color: $secondary
-	padding-top: 5%
-	padding-bottom: 17%
+	padding-top: 80px
+	padding-bottom: 200px
 	position: relative
 .photos__title
 	margin-top: 0
@@ -185,6 +207,7 @@ img
 .photos__image
 	position: relative
 	cursor: pointer
+	min-width: 200px
 .photos__scale
 	position: absolute
 	right: 5px
@@ -207,7 +230,8 @@ img
 .blog
 	padding: 10% 0 20% 0
 	background-repeat: no-repeat
-	background-size: 100% 100%
+	background-size: cover
+	background-position: bottom center
 	background-color: #f2f2f2
 	font-family: 'Merriweather'
 	position: relative
@@ -218,10 +242,9 @@ img
 		justify-content: space-between
 	&::before
 		background: #11161d
-		top: -20%
+		top: -12rem
 		content: ""
-		display: block
-		height: 20% + 1%
+		height: 12rem
 		left: 0
 		position: absolute
 		right: 0
@@ -248,6 +271,10 @@ img
 	display: flex
 	width: 60%
 	line-height: 2
+.blog__content_row
+	margin-right: 30px
+	&:last-child
+		margin-right: 0
 .blog__decor-text
 	position: absolute
 	top: 40%
@@ -263,6 +290,8 @@ img
 		background-color: $secondary
 
 .articles
+	font-family: 'Merriweather'
+	font-weight: 400
 	position: relative
 	background-color: #f2f2f2
 	color: #000
@@ -270,11 +299,13 @@ img
 	z-index: 1
 .articles__item
 	background-color: #fff
-	width: calc((100% - 15px * 3) / 4)
+	width: calc((100% - 30px * 3) / 4)
 	margin-right: 15px
 	margin-bottom: 50px
 	&:nth-child(4n + 4)
 		margin-right: 0
+.articles__item-text
+	padding: 0 30px
 .articles__item-title
 	line-height: 1.2
 	margin: 15px 0
@@ -284,6 +315,7 @@ img
 	align-items: center
 .articles__author
 	color: $secondary
+	padding-left: 20px
 	> i
 		margin-right: 10px
 	&:hover
@@ -318,11 +350,14 @@ img
 	background-color: #11161d
 .jumbotron-container_bottom
 	z-index: 1
+	.jumbotron
+		top: 25%
 .main-footer
 	position: relative
 	background-color: #11161d
 	padding: 10% 0
 	z-index: 1
+	margin-top: -2px
 	> .wrapper
 		display: flex
 		align-items: center
