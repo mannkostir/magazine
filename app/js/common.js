@@ -1,5 +1,15 @@
 'use strict';
 
+// forEach polyfill for IE
+if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callback.call(thisArg, this[i], i, this);
+        }
+    };
+}
+
 import 'fslightbox'
 import Glide from '@glidejs/glide'
 
@@ -28,7 +38,7 @@ function glideCarousel() {
 }
 
 function animateScaleButton() {
-	let scaleButton = document.querySelectorAll('.photos__scale');
+	let scaleButton = document.querySelectorAll('.photos__scale-button');
 	let photosImage = document.querySelectorAll('.photos__image');
 
 	photosImage.forEach( (el, i) => {
